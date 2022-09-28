@@ -1,6 +1,12 @@
 #include <iostream>
 #include <fstream>
 
+bool isChecked(char ch) {
+        if (ch != ' ' && ch != ',' && ch != '\t' && ch != '\0')
+                return true;
+        return false;
+}
+
 int main() {
 	std::string str;
 	std::ifstream iFile("test.txt");
@@ -11,16 +17,16 @@ int main() {
 	while (getline(iFile, str)) {
 		int i = 0;
 		while (str[i] != '\0') {
-			if (str[i] == ' ' || str[i] == ',') {
+			if (!isChecked(str[i])) {
 				++i;
 				continue;
 			}
-			if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == ',' || str[i + 1] == '\0')) {
+			if (isChecked(str[i]) && !isChecked(str[i + 1])) {
 				std::cout << str[i] << std::endl;
 				++i;
 				continue;
 			}
-			if (str[i] != ' ' || str[i] != ',') {
+			if (isChecked(str[i])) {
 				std::cout << str[i];
 				++i;
 				continue;
