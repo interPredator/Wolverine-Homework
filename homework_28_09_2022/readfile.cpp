@@ -4,10 +4,12 @@
 int main() {
 	std::string str;
 	std::ifstream iFile("test.txt");
-	if (!iFile.isOpen()) { std::cout << "File is not opened" };
+	if (!iFile.is_open()) {
+		 std::cout << "File is not opened";
+		 return 0;
+	}
 	while (getline(iFile, str)) {
 		int i = 0;
-
 		while (str[i] != '\0') {
 			if (str[i] == ' ' || str[i] == ',') {
 				++i;
@@ -26,4 +28,5 @@ int main() {
 			++i;
 		}
 	}
+	iFile.close();
 }
