@@ -14,8 +14,9 @@ int main() {
 		 std::cout << "File is not opened";
 		 return 0;
 	}
+	int i;
 	while (getline(iFile, str)) {
-		int i = 0;
+		i = 0;
 		while (str[i] != '\0') {
 			if (!isChecked(str[i])) {
 				++i;
