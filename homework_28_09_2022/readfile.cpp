@@ -18,19 +18,10 @@ int main() {
 	while (getline(iFile, str)) {
 		i = 0;
 		while (str[i] != '\0') {
-			if (!isChecked(str[i])) {
-				++i;
-				continue;
-			}
 			if (isChecked(str[i]) && !isChecked(str[i + 1])) {
 				std::cout << str[i] << std::endl;
-				++i;
-				continue;
-			}
-			if (isChecked(str[i])) {
+			} else if (isChecked(str[i])) {
 				std::cout << str[i];
-				++i;
-				continue;
 			}
 			++i;
 		}
