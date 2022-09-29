@@ -26,5 +26,5 @@ int main() {
 } 
 
 bool isChecked(char ch) {
-	return (ch != ' ' && ch != ',' && ch != '\t' && ch != '\0')
+	return (ch != ' ' && ch != ',' && ch != '\t' && ch != '\0');
 }
