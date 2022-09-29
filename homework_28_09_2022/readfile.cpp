@@ -1,11 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-bool isChecked(char ch) {
-        if (ch != ' ' && ch != ',' && ch != '\t' && ch != '\0')
-                return true;
-        return false;
-}
+bool isChecked(char ch);
 
 int main() {
 	std::string str;
@@ -28,3 +24,7 @@ int main() {
 	}
 	iFile.close();
 } 
+
+bool isChecked(char ch) {
+	return (ch != ' ' && ch != ',' && ch != '\t' && ch != '\0')
+}
