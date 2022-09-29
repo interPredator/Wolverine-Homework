@@ -4,13 +4,13 @@
 bool isChecked(char ch);
 
 int main() {
+	int i;
 	std::string str;
 	std::ifstream iFile("test.txt");
 	if (!iFile.is_open()) {
 		 std::cout << "File is not opened";
 		 return 0;
 	}
-	int i;
 	while (getline(iFile, str)) {
 		i = 0;
 		while (str[i] != '\0') {
